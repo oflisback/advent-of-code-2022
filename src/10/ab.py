@@ -7,7 +7,7 @@ for l in lines:
     if l == "noop":
         pipeline.append(["noop", 1, 0])
     else:
-        [inst, val] = l.split()
+        inst, val = l.split()
         pipeline.append(["addx", 2, int(val)])
 
 
