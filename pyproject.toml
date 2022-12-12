@@ -13,6 +13,7 @@ numpy = "^1.23.5"
 networkx = "^2.8.8"
 parse = "^1.19.0"
 black = "^22.10.0"
+matplotlib = "^3.6.2"
 
 
 [build-system]
