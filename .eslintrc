@@ -7,6 +7,9 @@
   "plugins": [
     "@typescript-eslint"
   ],
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off"
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
