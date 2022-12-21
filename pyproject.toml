@@ -15,6 +15,7 @@ parse = "^1.19.0"
 black = "^22.10.0"
 matplotlib = "^3.6.2"
 pygame = "^2.1.2"
+sympy = "^1.11.1"
 
 
 [build-system]
