@@ -2,3 +2,5 @@
 highscore-lists
 node_modules
 playground
+
+__pycache__/
