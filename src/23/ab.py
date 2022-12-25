@@ -33,6 +33,21 @@ def move_suggestion(direction):
         return (-1, 0)
 
 
+def get_empty_ground():
+    min_x = min([e["pos"][0] for e in elves])
+    max_x = max([e["pos"][0] for e in elves])
+    min_y = min([e["pos"][1] for e in elves])
+    max_y = max([e["pos"][1] for e in elves])
+
+    free_space = 0
+    elf_positions = [e["pos"] for e in elves]
+    for y in range(min_y, max_y + 1):
+        for x in range(min_x, max_x + 1):
+            if (x, y) not in elf_positions:
+                free_space += 1
+    return free_space
+
+
 def draw_elves(elves):
     min_x = min([e["pos"][0] for e in elves])
     max_x = max([e["pos"][0] for e in elves])
@@ -50,12 +65,13 @@ def draw_elves(elves):
 elves_moved = 1
 round = 0
 while elves_moved > 0:
-    print("Last round", round, elves_moved, "elves moved")
+    if round == 10:
+        print(get_empty_ground())
     round += 1
     elves_moved = 0
     proposed_targets_1 = set()
     proposed_targets_2 = set()
-    elf_positions = [e["pos"] for e in elves]
+    elf_positions = set(e["pos"] for e in elves)
     # First half!
     for e in elves:
         pos = e["pos"]
